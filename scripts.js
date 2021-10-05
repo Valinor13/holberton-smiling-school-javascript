@@ -1,14 +1,9 @@
-const arrowPrev = '<input type="button" class="slick-prev" src="/images/arrow_black_left.png" height="62px" width="auto">';
-const arrowNext = '<input type="button" class="slick-next" src="/images/arrow_black_right.png" height="62px" width="auto">';
-
 let responsiveCarousel = {
     autoplay: false,
     infinite: true,
     slidesToShow: 4,
     slidesToScroll: 1,
     arrows: true,
-    prevArrow: arrowPrev,
-    nextArrow: arrowNext,
     responsive: [
       {
         breakpoint: 1024,
@@ -35,7 +30,9 @@ let responsiveCarousel = {
 };
 
 $(document).ready(function(){
-    $('#quotes .slick').slick();
-    $('#popularTutorials .slick').slick(responsiveCarousel);
-    $('#latestVideos .slick').slick(responsiveCarousel);
+    $('#quotes .single-item').slick();
+    $('#popularTutorials .responsive').slick(responsiveCarousel);
+    $('#latestVideos .responsive').slick(responsiveCarousel);
+    $('.responsive').prepend(`<button class="slick-prev slick-arrow" aria-label="Previous" type="button" style="">Previous</button>`);
+    $('.responsive').append(`<button class="slick-next slick-arrow" aria-label="Next" type="button" style="">Next</button>`);
 });

@@ -132,3 +132,45 @@ header .bg-courses {
 .cust-card {
     max-width: 255px;
 }
+
+#quotes .slick-prev {
+    background-image: url('/images/arrow_white_left.png');
+    height: 62px;
+    width: 29px;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#quotes .slick-next {
+    background-image: url('/images/arrow_white_right.png');
+    height: 62px;
+    width: 29px;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#quotes .slick-prev:before {
+    color: #C271FF !important;
+    background-color: #C271FF;
+}
+
+#quotes .slick-next:before {
+    color: #C271FF !important;
+    background-color: #C271FF;
+}
+
+.responsive .slick-prev {
+    background-image: url('/images/arrow_black_left.png');
+    height: 62px;
+    width: 29px;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.responsive .slick-next {
+    background-image: url('/images/arrow_black_right.png');
+    height: 62px;
+    width: 29px;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
