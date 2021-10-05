@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -103,26 +103,17 @@
       <section class="bg-purp" id="quotes">
         <div class="single-item container">
             <div class="col-8 mx-auto">
-                <div class="text-white d-sm-flex flex-sm-row">
-                    <img src="/images/profile_5.jpg" class="d-block rounded-circle mt-110 mx-auto ml-sm-5 mx-sm-none" width="150px" height="150px" alt="Profile Pic #5">
-                    <div class="mb-110 mt-110 px-5 cara-cust">
-                        <p>« Those tutorials are concise and go straight to the point. I can’t think of a better place to learn smiling. And it’s so fun!</p>
-                        <h5>Person Name</h5>
-                        <p class="font-italic">weather presenter</p>
-                    </div>
-                </div>    
+                <div id="quoteOne" class="text-white d-sm-flex flex-sm-row">
+      
+                </div>
             </div>
             <div class="col-8 mx-auto">
-                <div class="text-white d-sm-flex flex-sm-row">
-                    <img src="/images/profile_5.jpg" class="d-block rounded-circle mt-110 mx-auto ml-sm-5 mx-sm-none" width="150px" height="150px" alt="Profile Pic #5">
-                    <div class="mb-110 mt-110 px-5 cara-cust">
-                        <p>« Those tutorials are concise and go straight to the point. I can’t think of a better place to learn smiling. And it’s so fun!</p>
-                        <h5>Person Name</h5>
-                        <p class="font-italic">weather presenter</p>
-                    </div>
-                </div>    
+                <div id="quoteTwo" class="text-white d-sm-flex flex-sm-row">
+      
+                </div>
             </div>
         </div>
+        <div class="loader"></div>
       </section>
       <section id="popularTutorials" class="mb-5">
         <div class="text-center my-5 py-5">
@@ -133,7 +124,7 @@
           </h1>
         </div>
         <div class="container responsive">
-            <div class="border-0 cust-card mx-3">
+            <div class="border-0 mx-3">
                 <img src="/images/thumbnail_4.jpg" height="auto" width="255px" alt="Card image cap #1">
                 <div class="p-2 pt-3">
                     <h6 class="font-weight-bolder">Diagonal Smile</h6>
@@ -156,7 +147,7 @@
                     </div>
                 </div>
             </div>
-            <div class="border-0 cust-card mx-3">
+            <div class="border-0 mx-3">
                 <img src="/images/thumbnail_3.jpg" height="auto" width="255px" alt="Card image cap #2">
                 <div class="p-2 pt-3">
                     <h6 class="font-weight-bolder">Sad Smile</h6>
@@ -179,7 +170,7 @@
                     </div>
                 </div>
             </div>
-            <div class="border-0 cust-card mx-3">
+            <div class="border-0 mx-3">
                 <img src="/images/thumbnail_1.jpg" height="auto" width="255px" alt="Card image cap #3">
                 <div class="p-2 pt-3">
                     <h6 class="font-weight-bolder">Natural Smile</h6>
@@ -202,7 +193,7 @@
                     </div>
                 </div>
             </div>
-            <div class="border-0 cust-card mx-3">
+            <div class="border-0 mx-3">
                 <img src="/images/thumbnail_2.jpg" height="auto" width="255px" alt="Card image cap #1">
                 <div class="p-2 pt-3">
                     <h6 class="font-weight-bolder">Happy Smile</h6>
@@ -276,7 +267,7 @@
             </h1>
         </div>
         <div class="responsive container">
-            <div class="border-0 cust-card mx-3">
+            <div class="border-0 col-3 mx-3">
                 <img src="/images/thumbnail_4.jpg" height="auto" width="255px" alt="Card image cap #1">
                 <div class="p-2 pt-3">
                     <h6 class="font-weight-bolder">Diagonal Smile</h6>
@@ -299,7 +290,7 @@
                     </div>
                 </div>
             </div>
-            <div class="border-0 cust-card mx-3">
+            <div class="border-0 col-3 mx-3">
                 <img src="/images/thumbnail_3.jpg" height="auto" width="255px" alt="Card image cap #2">
                 <div class="p-2 pt-3">
                     <h6 class="font-weight-bolder">Sad Smile</h6>
@@ -322,7 +313,7 @@
                     </div>
                 </div>
             </div>
-            <div class="border-0 cust-card mx-3">
+            <div class="border-0 col-3 mx-3">
                 <img src="/images/thumbnail_1.jpg" height="auto" width="255px" alt="Card image cap #3">
                 <div class="p-2 pt-3">
                     <h6 class="font-weight-bolder">Natural Smile</h6>
@@ -345,7 +336,7 @@
                     </div>
                 </div>
             </div>
-            <div class="border-0 cust-card mx-3">
+            <div class="border-0 col-3 mx-3">
                 <img src="/images/thumbnail_2.jpg" height="auto" width="255px" alt="Card image cap #1">
                 <div class="p-2 pt-3">
                     <h6 class="font-weight-bolder">Happy Smile</h6>
@@ -368,7 +359,7 @@
                     </div>
                 </div>
             </div>
-            <div class="border-0 cust-card mx-3">
+            <div class="border-0 col-3 mx-3">
                 <img src="/images/thumbnail_5.jpg" height="auto" width="255px" alt="Card image cap #5">
                 <div class="p-2 pt-3">
                     <h6 class="font-weight-bolder">Inverted Smile</h6>
