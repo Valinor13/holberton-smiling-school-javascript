@@ -1,18 +1,9 @@
 let responsiveCarousel = {
-    infinite: true,
     slidesToShow: 4,
     slidesToScroll: 1,
-    arrows: false,
     responsive: [
       {
         breakpoint: 992,
-        settings: {
-          slidesToShow: 3,
-          slidesToScroll: 1,
-        }
-      },
-      {
-        breakpoint: 768,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1
@@ -31,7 +22,52 @@ let responsiveCarousel = {
 $(document).ready(function() {
     loadQuotes();
     loadPopularTutorials();
+    loadLatestVideos();
 })
+
+function loadLatestVideos() {
+  $.ajax({
+    url: `https://smileschool-api.hbtn.info/latest-videos`,
+    type: 'GET',
+    dataType: 'json',
+    jsonp: false,
+    beforeSend: function () {
+      $('.loader').show();
+    },
+    success: function(data) {
+      $('#latestCarousel').empty();
+      for (let i = 0; i < data.length; i++) {
+        $('#latestCarousel').append(`<div id="latestCard${i}" class="border-0 col-3 mx-3">`)
+        $(`#latestCard${i}`).append(`<img src=${data[i].thumb_url} height="auto" width="255px" alt="Card image cap #1">
+                                  <div class="p-2 pt-3">
+                                      <h6 class="font-weight-bolder">${data[i].title}</h6>
+                                      <p class="small text-muted">${data[i]["sub-title"]}</p>
+                                  </div>
+                                  <div class="border-0">
+                                      <div class="row m-0">
+                                          <img class="rounded-circle" src=${data[i].author_pic_url} width="30px" height="30px" alt="Review pic">
+                                          <p class="color-purp pl-3 pt-1">${data[i].author}</p>
+                                      </div>
+                                      <div class="row justify-content-between m-0">
+                                          <div id="latestStarReview${i}" class="row pl-2">
+                                          </div>
+                                          <p class="color-purp">${data[i].duration}</p>
+                                      </div>
+                                  </div>`);
+        for (let j = 0; j < data[i].star; j++) {
+          $(`#latestStarReview${i}`).append('<img src="/images/star_on.png" height="15px" width="15px" alt="star on">');
+        }
+        for (let j = 0; j < (5 - data[i].star); j++) {
+          $(`#latestStarReview${i}`).append('<img src="/images/star_off.png" height="15px" width="15px" alt="star off">');
+        }
+      }
+    },
+    complete: function () {
+      $('.loader').hide();
+      $('#latestCarousel').slick(responsiveCarousel);
+    }
+  })
+}
 
 function loadPopularTutorials() {
   $.ajax({
@@ -45,7 +81,7 @@ function loadPopularTutorials() {
     success: function(data) {
       $('#popCarousel').empty();
       for (let i = 0; i < data.length; i++) {
-        $('#popCarousel').append(`<div id="popCard${i}" class="border-0 mx-3">`)
+        $('#popCarousel').append(`<div id="popCard${i}" class="border-0 col-3 mx-3">`)
         $(`#popCard${i}`).append(`<img src=${data[i].thumb_url} height="auto" width="255px" alt="Card image cap #1">
                                   <div class="p-2 pt-3">
                                       <h6 class="font-weight-bolder">${data[i].title}</h6>
@@ -57,24 +93,22 @@ function loadPopularTutorials() {
                                           <p class="color-purp pl-3 pt-1">${data[i].author}</p>
                                       </div>
                                       <div class="row justify-content-between m-0">
-                                          <div id="starReview${i}" class="row pl-2">
+                                          <div id="popStarReview${i}" class="row pl-2">
                                           </div>
                                           <p class="color-purp">${data[i].duration}</p>
                                       </div>
                                   </div>`);
         for (let j = 0; j < data[i].star; j++) {
-          $(`#starReview${i}`).append('<img src="/images/star_on.png" height="15px" width="15px" alt="star on">');
+          $(`#popStarReview${i}`).append('<img src="/images/star_on.png" height="15px" width="15px" alt="star on">');
         }
         for (let j = 0; j < (5 - data[i].star); j++) {
-          $(`#starReview${i}`).append('<img src="/images/star_off.png" height="15px" width="15px" alt="star off">');
+          $(`#popStarReview${i}`).append('<img src="/images/star_off.png" height="15px" width="15px" alt="star off">');
         }
       }
     },
     complete: function () {
       $('.loader').hide();
       $('#popCarousel').slick(responsiveCarousel);
-      $('#popCarousel').prepend(`<button class="slick-prev slick-arrow" aria-label="Previous" type="button" style="">Previous</button>`);
-      $('#popCarousel').append(`<button class="slick-next slick-arrow" aria-label="Next" type="button" style="">Next</button>`);
     }
   })
 }
