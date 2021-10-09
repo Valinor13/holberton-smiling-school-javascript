@@ -7,7 +7,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/js/all.min.js" integrity="sha512-cyAbuGborsD25bhT/uz++wPqrh5cqPh1ULJz4NSpN9ktWcA6Hnh9g+CWKeNx2R0fgQt+ybRXdabSBgYXkQTTmA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="scripts.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -58,310 +60,38 @@
         </div>
       </header>
       <div id="section-search" class="bg-purp text-white">
-        <div class="container-fluid container-md mx-auto">
-          <ul class="navbar nav ml-auto">
-            <li>
-              <div class="py-5">
-                <p>KEYWORDS</p>
-                <div class="input-group md-form form-sm form-1 pl-0">
-                  <div class="input-group-prepend">
-                    <span class="input-group-text bg-purp bg-lp" id="basic-text1"><i class="fas fa-search text-white"
-                        aria-hidden="true"></i></span>
-                  </div>
-                  <input class="form-control my-0 py-1 bg-lp text-white opacity-50" type="text" placeholder="Search by keywords">
-                </div>
+        <div class="container-fluid container-md mx-auto row justify-content-between">
+              <div class="py-5 col-12 col-sm-2">
+                <p class="pl-4">KEYWORDS</p>
+                <div class="row">
+                  <i id="searchSubmit" class="fas fa-search text-white fs-32" style="cursor: pointer; width: 35px;"></i>
+                  <input id="keyword" type="text" class="my-0 py-1 bg-lp text-white" placeholder="Search by keywords"> 
+                </div>             
               </div>
-            </li>
-            <li>
-              <div class="py-5">
-                <p>TOPIC</p>
-                <div>
-                  <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                    Novice
-                  </a>
-                  <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">Novice</a>
-                    <a class="dropdown-item" href="#">Intermediate</a>
-                    <a class="dropdown-item" href="#">Expert</a>
-                  </div>
-                </div>
+              <div class="py-5 col-12 col-sm-2">
+                <p class="pl-1">TOPIC</p>
+                <select name="Topic" id="topic" class="bg-lp text-white py-1 px-3">
+                  <option value="all">All</option>
+                  <option value="novice">Novice</option>
+                  <option value="intermediate">Intermediate</option>
+                  <option value="expert">Expert</option>
+                </select>
               </div>
-            </li>
-            <li>
-              <div class="py-5">
-                <p>SORT BY</p>
-                <div>
-                  <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                    Most Popular
-                  </a>
-                  <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">Most Popular</a>
-                    <a class="dropdown-item" href="#">Most Recent</a>
-                    <a class="dropdown-item" href="#">Most Viewed</a>
-                  </div>
-                </div>
+              <div class="py-5 col-12 col-sm-2">
+                <p class="pl-1">SORT BY</p>
+                <select name="Sort By" id="sortOption" class="bg-lp text-white py-1 px-3">
+                  <option value="most_popular">Most Popular</option>
+                  <option value="most_viewed">Most Viewed</option>
+                  <option value="most_recent">Most Recent</option>
+                </select>
               </div>
-            </li>
-          </ul>
+          </div>
         </div>
       </div>
       <div id="section-videos" class="container-fluid container-md">
-        <p class="text-secondary py-5">11 videos</p>
-        <div class="row">
-          <div class="border-0 cust-card mx-3 col-3">
-            <img src="/images/thumbnail_5.jpg" height="auto" width="255px" alt="Card image cap #1">
-            <div class="p-2 pt-3">
-              <h6 class="font-weight-bolder">Inverted Smile</h6>
-              <p class="small text-muted">Lorem ipsum dolor sit amet, consect adipiscing elit, sed do eiusmod.</p>
-            </div>
-            <div class="border-0">
-              <div class="row m-0">
-                <img class="rounded-circle" src="/images/profile_1.jpg" height="30px" width="30px" alt="Review pic">
-                <p class="color-purp pl-3 pt-1">Phillip Massey</p>
-              </div>
-              <div class="row justify-content-between m-0">
-                <div>
-                  <img src="/images/star_on.png" height="15px" width="15px" alt="star on">
-                  <img src="/images/star_on.png" height="15px" width="15px" alt="star on">
-                  <img src="/images/star_on.png" height="15px" width="15px" alt="star on">
-                  <img src="/images/star_on.png" height="15px" width="15px" alt="star on">
-                  <img src="/images/star_off.png" height="15px" width="15px" alt="star off">
-                </div>
-                <p class="color-purp">8 min</p>
-              </div>
-            </div>
-          </div>
-          <div class="border-0 cust-card mx-3 col-3">
-            <img src="/images/thumbnail_3.jpg" height="auto" width="255px" alt="Card image cap #2">
-            <div class="p-2 pt-3">
-              <h6 class="font-weight-bolder">Sad Smile</h6>
-              <p class="small text-muted">Lorem ipsum dolor sit amet, consect adipiscing elit, sed do eiusmod.</p>
-            </div>
-            <div class="border-0">
-              <div class="row m-0">
-                <img class="rounded-circle" src="/images/profile_1.jpg" height="30px" width="30px" alt="Review pic">
-                <p class="color-purp pl-3 pt-1">Phillip Massey</p>
-              </div>
-              <div class="row justify-content-between m-0">
-                <div>
-                  <img src="/images/star_on.png" height="15px" width="15px" alt="star on">
-                  <img src="/images/star_on.png" height="15px" width="15px" alt="star on">
-                  <img src="/images/star_on.png" height="15px" width="15px" alt="star on">
-                  <img src="/images/star_on.png" height="15px" width="15px" alt="star on">
-                  <img src="/images/star_off.png" height="15px" width="15px" alt="star off">
-                </div>
-                <p class="color-purp">8 min</p>
-              </div>
-            </div>
-          </div>
-          <div class="border-0 cust-card mx-3 col-3">
-            <img src="/images/thumbnail_1.jpg" height="auto" width="255px" alt="Card image cap #3">
-            <div class="p-2 pt-3">
-              <h6 class="font-weight-bolder">Natural Smile</h6>
-              <p class="small text-muted">Lorem ipsum dolor sit amet, consect adipiscing elit, sed do eiusmod.</p>
-            </div>
-            <div class="border-0">
-              <div class="row m-0">
-                <img class="rounded-circle" src="/images/profile_1.jpg" height="30px" width="30px" alt="Review pic">
-                <p class="color-purp pl-3 pt-1">Phillip Massey</p>
-              </div>
-              <div class="row justify-content-between m-0">
-                <div>
-                  <img src="/images/star_on.png" height="15px" width="15px" alt="star on">
-                  <img src="/images/star_on.png" height="15px" width="15px" alt="star on">
-                  <img src="/images/star_on.png" height="15px" width="15px" alt="star on">
-                  <img src="/images/star_on.png" height="15px" width="15px" alt="star on">
-                  <img src="/images/star_off.png" height="15px" width="15px" alt="star off">
-                </div>
-                <p class="color-purp">8 min</p>
-              </div>
-            </div>
-          </div>
-          <div class="border-0 cust-card mx-3 col-3">
-            <img src="/images/thumbnail_2.jpg" height="auto" width="255px" alt="Card image cap #1">
-            <div class="p-2 pt-3">
-              <h6 class="font-weight-bolder">Happy Smile</h6>
-              <p class="small text-muted">Lorem ipsum dolor sit amet, consect adipiscing elit, sed do eiusmod.</p>
-            </div>
-            <div class="border-0">
-              <div class="row m-0">
-                <img class="rounded-circle" src="/images/profile_1.jpg" height="30px" width="30px" alt="Review pic">
-                <p class="color-purp pl-3 pt-1">Phillip Massey</p>
-              </div>
-              <div class="row justify-content-between m-0">
-                <div>
-                  <img src="/images/star_on.png" height="15px" width="15px" alt="star on">
-                  <img src="/images/star_on.png" height="15px" width="15px" alt="star on">
-                  <img src="/images/star_on.png" height="15px" width="15px" alt="star on">
-                  <img src="/images/star_on.png" height="15px" width="15px" alt="star on">
-                  <img src="/images/star_off.png" height="15px" width="15px" alt="star off">
-                </div>
-                <p class="color-purp">8 min</p>
-              </div>
-            </div>
-          </div>
-          <div class="border-0 cust-card mx-3 col-3">
-            <img src="/images/thumbnail_5.jpg" height="auto" width="255px" alt="Card image cap #1">
-            <div class="p-2 pt-3">
-              <h6 class="font-weight-bolder">Inverted Smile</h6>
-              <p class="small text-muted">Lorem ipsum dolor sit amet, consect adipiscing elit, sed do eiusmod.</p>
-            </div>
-            <div class="border-0">
-              <div class="row m-0">
-                <img class="rounded-circle" src="/images/profile_1.jpg" height="30px" width="30px" alt="Review pic">
-                <p class="color-purp pl-3 pt-1">Phillip Massey</p>
-              </div>
-              <div class="row justify-content-between m-0">
-                <div>
-                  <img src="/images/star_on.png" height="15px" width="15px" alt="star on">
-                  <img src="/images/star_on.png" height="15px" width="15px" alt="star on">
-                  <img src="/images/star_on.png" height="15px" width="15px" alt="star on">
-                  <img src="/images/star_on.png" height="15px" width="15px" alt="star on">
-                  <img src="/images/star_off.png" height="15px" width="15px" alt="star off">
-                </div>
-                <p class="color-purp">8 min</p>
-              </div>
-            </div>
-          </div>
-          <div class="border-0 cust-card mx-3 col-3">
-            <img src="/images/thumbnail_3.jpg" height="auto" width="255px" alt="Card image cap #2">
-            <div class="p-2 pt-3">
-              <h6 class="font-weight-bolder">Sad Smile</h6>
-              <p class="small text-muted">Lorem ipsum dolor sit amet, consect adipiscing elit, sed do eiusmod.</p>
-            </div>
-            <div class="border-0">
-              <div class="row m-0">
-                <img class="rounded-circle" src="/images/profile_1.jpg" height="30px" width="30px" alt="Review pic">
-                <p class="color-purp pl-3 pt-1">Phillip Massey</p>
-              </div>
-              <div class="row justify-content-between m-0">
-                <div>
-                  <img src="/images/star_on.png" height="15px" width="15px" alt="star on">
-                  <img src="/images/star_on.png" height="15px" width="15px" alt="star on">
-                  <img src="/images/star_on.png" height="15px" width="15px" alt="star on">
-                  <img src="/images/star_on.png" height="15px" width="15px" alt="star on">
-                  <img src="/images/star_off.png" height="15px" width="15px" alt="star off">
-                </div>
-                <p class="color-purp">8 min</p>
-              </div>
-            </div>
-          </div>
-          <div class="border-0 cust-card mx-3 col-3">
-            <img src="/images/thumbnail_1.jpg" height="auto" width="255px" alt="Card image cap #3">
-            <div class="p-2 pt-3">
-              <h6 class="font-weight-bolder">Natural Smile</h6>
-              <p class="small text-muted">Lorem ipsum dolor sit amet, consect adipiscing elit, sed do eiusmod.</p>
-            </div>
-            <div class="border-0">
-              <div class="row m-0">
-                <img class="rounded-circle" src="/images/profile_1.jpg" height="30px" width="30px" alt="Review pic">
-                <p class="color-purp pl-3 pt-1">Phillip Massey</p>
-              </div>
-              <div class="row justify-content-between m-0">
-                <div>
-                  <img src="/images/star_on.png" height="15px" width="15px" alt="star on">
-                  <img src="/images/star_on.png" height="15px" width="15px" alt="star on">
-                  <img src="/images/star_on.png" height="15px" width="15px" alt="star on">
-                  <img src="/images/star_on.png" height="15px" width="15px" alt="star on">
-                  <img src="/images/star_off.png" height="15px" width="15px" alt="star off">
-                </div>
-                <p class="color-purp">8 min</p>
-              </div>
-            </div>
-          </div>
-          <div class="border-0 cust-card mx-3 col-3">
-            <img src="/images/thumbnail_2.jpg" height="auto" width="255px" alt="Card image cap #1">
-            <div class="p-2 pt-3">
-              <h6 class="font-weight-bolder">Happy Smile</h6>
-              <p class="small text-muted">Lorem ipsum dolor sit amet, consect adipiscing elit, sed do eiusmod.</p>
-            </div>
-            <div class="border-0">
-              <div class="row m-0">
-                <img class="rounded-circle" src="/images/profile_1.jpg" height="30px" width="30px" alt="Review pic">
-                <p class="color-purp pl-3 pt-1">Phillip Massey</p>
-              </div>
-              <div class="row justify-content-between m-0">
-                <div>
-                  <img src="/images/star_on.png" height="15px" width="15px" alt="star on">
-                  <img src="/images/star_on.png" height="15px" width="15px" alt="star on">
-                  <img src="/images/star_on.png" height="15px" width="15px" alt="star on">
-                  <img src="/images/star_on.png" height="15px" width="15px" alt="star on">
-                  <img src="/images/star_off.png" height="15px" width="15px" alt="star off">
-                </div>
-                <p class="color-purp">8 min</p>
-              </div>
-            </div>
-          </div>
-          <div class="border-0 cust-card mx-3 col-3">
-            <img src="/images/thumbnail_5.jpg" height="auto" width="255px" alt="Card image cap #1">
-            <div class="p-2 pt-3">
-              <h6 class="font-weight-bolder">Inverted Smile</h6>
-              <p class="small text-muted">Lorem ipsum dolor sit amet, consect adipiscing elit, sed do eiusmod.</p>
-            </div>
-            <div class="border-0">
-              <div class="row m-0">
-                <img class="rounded-circle" src="/images/profile_1.jpg" height="30px" width="30px" alt="Review pic">
-                <p class="color-purp pl-3 pt-1">Phillip Massey</p>
-              </div>
-              <div class="row justify-content-between m-0">
-                <div>
-                  <img src="/images/star_on.png" height="15px" width="15px" alt="star on">
-                  <img src="/images/star_on.png" height="15px" width="15px" alt="star on">
-                  <img src="/images/star_on.png" height="15px" width="15px" alt="star on">
-                  <img src="/images/star_on.png" height="15px" width="15px" alt="star on">
-                  <img src="/images/star_off.png" height="15px" width="15px" alt="star off">
-                </div>
-                <p class="color-purp">8 min</p>
-              </div>
-            </div>
-          </div>
-          <div class="border-0 cust-card mx-3 col-3">
-            <img src="/images/thumbnail_3.jpg" height="auto" width="255px" alt="Card image cap #2">
-            <div class="p-2 pt-3">
-              <h6 class="font-weight-bolder">Sad Smile</h6>
-              <p class="small text-muted">Lorem ipsum dolor sit amet, consect adipiscing elit, sed do eiusmod.</p>
-            </div>
-            <div class="border-0">
-              <div class="row m-0">
-                <img class="rounded-circle" src="/images/profile_1.jpg" height="30px" width="30px" alt="Review pic">
-                <p class="color-purp pl-3 pt-1">Phillip Massey</p>
-              </div>
-              <div class="row justify-content-between m-0">
-                <div>
-                  <img src="/images/star_on.png" height="15px" width="15px" alt="star on">
-                  <img src="/images/star_on.png" height="15px" width="15px" alt="star on">
-                  <img src="/images/star_on.png" height="15px" width="15px" alt="star on">
-                  <img src="/images/star_on.png" height="15px" width="15px" alt="star on">
-                  <img src="/images/star_off.png" height="15px" width="15px" alt="star off">
-                </div>
-                <p class="color-purp">8 min</p>
-              </div>
-            </div>
-          </div>
-          <div class="border-0 cust-card mx-3 col-3">
-            <img src="/images/thumbnail_1.jpg" height="auto" width="255px" alt="Card image cap #3">
-            <div class="p-2 pt-3">
-              <h6 class="font-weight-bolder">Natural Smile</h6>
-              <p class="small text-muted">Lorem ipsum dolor sit amet, consect adipiscing elit, sed do eiusmod.</p>
-            </div>
-            <div class="border-0">
-              <div class="row m-0">
-                <img class="rounded-circle" src="/images/profile_1.jpg" height="30px" width="30px" alt="Review pic">
-                <p class="color-purp pl-3 pt-1">Phillip Massey</p>
-              </div>
-              <div class="row justify-content-between m-0">
-                <div>
-                  <img src="/images/star_on.png" height="15px" width="15px" alt="star on">
-                  <img src="/images/star_on.png" height="15px" width="15px" alt="star on">
-                  <img src="/images/star_on.png" height="15px" width="15px" alt="star on">
-                  <img src="/images/star_on.png" height="15px" width="15px" alt="star on">
-                  <img src="/images/star_off.png" height="15px" width="15px" alt="star off">
-                </div>
-                <p class="color-purp">8 min</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-3"></div>
+        <p id="videoCount" class="text-secondary py-5"></p>
+        <div id="allVideos" class="row">
+          
         </div>
       </div>
   </body>
