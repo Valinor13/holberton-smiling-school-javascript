@@ -1,4 +1,4 @@
-0x00. Build a web app in JavaScript
+# 0x00. Build a web app in JavaScript
 
 In this project, you will finalize the previous project [0x0B. Implement a design with bootstrap](https://github.com/Valinor13/holberton-smiling-school) and make some parts dynamic with Javascript (JQuery exactly).
 
